@@ -1,5 +1,14 @@
 <resources>
     <string name="app_name">ShoeStore</string>
-    <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="login_title">The Shoe Store</string>
+    <string name="login_subtitle">A new shopping experience</string>
+    <string name="login_header_user">Username</string>
+    <string name="login_header_password">Password</string>
+    <string name="hint_password">password...</string>
+    <string name="hint_user">example@example.com</string>
+    <string name="button_login">Login</string>
+    <string name="button_register">Register</string>
+    <string name="button_instruction_next">Next</string>
+    <string name="button_welcome_next">Next</string>
 </resources>
