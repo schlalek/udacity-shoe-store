@@ -10,6 +10,9 @@
             type="com.udacity.shoestore.models.ShoeViewModel" />
     </data>
 
+    <!-- ConstraintLayout is used here to provide an adaptable design,
+    that is working well for multiple display resolutions and different orientations -->
+    
     <androidx.constraintlayout.widget.ConstraintLayout
         android:id="@+id/frameLayout3"
         android:layout_width="match_parent"

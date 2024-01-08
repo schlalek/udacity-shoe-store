@@ -11,6 +11,9 @@
 
     </data>
 
+    <!-- ConstraintLayout is used here to provide an adaptable design,
+    that is working well for multiple display resolutions and different orientations -->
+
     <androidx.constraintlayout.widget.ConstraintLayout
         android:id="@+id/frameLayout2"
         android:layout_width="match_parent"
@@ -35,6 +38,7 @@
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent">
 
+            <!-- The LinearLayout is used a holder for the different views of a Shoe that are added programmatically -->
             <LinearLayout
                 android:id="@+id/shoeElementList"
                 android:layout_width="match_parent"
