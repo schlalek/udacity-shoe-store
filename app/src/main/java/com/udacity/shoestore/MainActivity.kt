@@ -2,20 +2,35 @@ package com.udacity.shoestore
 
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
-import androidx.appcompat.widget.Toolbar
+import androidx.databinding.DataBindingUtil
 import androidx.navigation.fragment.NavHostFragment
 import androidx.navigation.ui.setupWithNavController
+import com.udacity.shoestore.databinding.ActivityMainBinding
+import com.udacity.shoestore.ui.shoelist.ShoeListFragmentDirections
 
 class MainActivity : AppCompatActivity() {
+
+    private lateinit var binding: ActivityMainBinding
 
     //private lateinit var navController: NavController
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_main)
 
-        var toolBar = findViewById<Toolbar>(R.id.toolbar)
-        setSupportActionBar(toolBar)
-        toolBar.setupWithNavController(navController)
+        binding = DataBindingUtil.setContentView(this, R.layout.activity_main)
+
+        setSupportActionBar(binding.toolbar)
+        binding.toolbar.setupWithNavController(navController)
+
+        binding.toolbar.setOnMenuItemClickListener { menuItem ->
+            when (menuItem.itemId) {
+                R.id.menu_logout_entry -> {
+                    navController.navigate(ShoeListFragmentDirections.actionShoeListFragmentToLoginFragment())
+                    true
+                }
+
+                else -> false
+            }
+        }
     }
 
     private val navController by lazy {
